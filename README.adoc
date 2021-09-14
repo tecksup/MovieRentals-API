@@ -1,7 +1,7 @@
 # MovieRentals-API
  A SpringBoot project for learning how things work. Will keep track of movie rentals.
 
-===
+
 A simple movie-rental API, using Postman to interact with it.
 The API should follow RESTful best practices and should support the following operations: GET, DELETE, and POST. Your entities will be: Movie, Reservation.
 Ideally we should be able to :
