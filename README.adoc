@@ -27,3 +27,7 @@ Some of the tech stack was arbitrarily chosen, but they are for the most part th
 * Those repositories should be injected in the service layers. The Controller should never see the repositories.
 * Create a few test classes that use Jupiter for setting up the scenarios (`@BeforeEach`) and making some assertions (Assertions.asserTrue(...)). Those tests should use their own H2 DB. Simply make those integration tests (so go ahead and use `@SpringBootTest`, which will load the entire context).
 * Create some unit tests for any specific class using Mockito.
+* Add an OpenAPI documentation ("Swagger v3") to the project to help other people discover the API without having to read through the entire documentation. 
+
+
+Credit https://github.com/payne911 for helping me put together the project requirements in a manner that will best help me learn the important parts of SpringBoot. 
