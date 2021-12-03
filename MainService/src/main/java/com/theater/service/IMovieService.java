@@ -1,6 +1,6 @@
 package com.theater.service;
 
-import com.theater.Movie;
+import com.theater.model.Movie;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.theater;
+package com.theater.exception;
 
 public class MovieNotFoundException extends RuntimeException {
 

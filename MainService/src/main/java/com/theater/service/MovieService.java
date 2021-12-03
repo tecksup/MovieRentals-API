@@ -1,8 +1,8 @@
 package com.theater.service;
 
-import com.theater.Movie;
-import com.theater.MovieNotFoundException;
-import com.theater.NoDataFoundException;
+import com.theater.model.Movie;
+import com.theater.exception.MovieNotFoundException;
+import com.theater.exception.NoDataFoundException;
 import com.theater.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

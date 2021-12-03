@@ -1,4 +1,4 @@
-package com.theater;
+package com.theater.model;
 
 public class Reservation {
 
