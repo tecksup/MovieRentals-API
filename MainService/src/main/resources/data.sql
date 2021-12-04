@@ -7,3 +7,4 @@ INSERT INTO MOVIES (name,duration) VALUES ('Iron Man', 130);
 INSERT INTO MOVIES (name,duration) VALUES ('Your Name', 130);
 INSERT INTO MOVIES (name,duration) VALUES ('Kiki''s Delivery Service', 130);
 INSERT INTO MOVIES (name,duration) VALUES ('Princess Mononoke', 130);
+INSERT INTO RESERVATIONS (owner,reservedMovieId,timeCheckedOut,duration) VALUES ('Jacob', 2, TO_DATE('15/06/2015', 'DD/MM/YYYY'), 240000);

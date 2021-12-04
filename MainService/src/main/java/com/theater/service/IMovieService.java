@@ -7,7 +7,7 @@ import java.util.List;
 public interface IMovieService {
 
     Movie findById(Long id);
-    Movie save(Movie city);
+    Movie save(Movie movie);
     List<Movie> findAll();
 
 }
