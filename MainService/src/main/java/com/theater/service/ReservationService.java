@@ -1,9 +1,7 @@
 package com.theater.service;
 
-import com.theater.exception.MovieNotFoundException;
 import com.theater.exception.NoDataFoundException;
 import com.theater.exception.ReservationNotFoundException;
-import com.theater.model.Movie;
 import com.theater.model.Reservation;
 import com.theater.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
