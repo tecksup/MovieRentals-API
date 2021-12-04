@@ -17,7 +17,7 @@ Those are all things that are (usually) in the day-to-day life of a REST API dev
 Some of the tech stack was arbitrarily chosen, but they are for the most part the most popular choices so it won't be wasted effort to have learned them.
 
 ### Some extra challenges:
-- [*] Extract all normal logic from the Controller: it should be the Service layer that takes care of that.
+- [X] Extract all normal logic from the Controller: it should be the Service layer that takes care of that.
 - [ ] Normal logic assumes all inputs are correct: use javax.constraints (`@Validated`) to take care of that
 - [ ] Use `@ControllerAdvice` for controlling the error handling separately from this all
 - [ ] Understand how to can use application.properties, along with Spring Profiles, to control the flow of the application: it should have a local and a prod profile.
