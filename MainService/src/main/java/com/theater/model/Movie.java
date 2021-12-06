@@ -10,24 +10,26 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name= "NAME", length = 50)
+    @Column(name = "NAME", nullable = false, length = 50)
     @NotNull(message = "Movie must be named")
     private String name;
     @Column(name= "DURATION")
     @NotNull(message = "Movie must have duration")
     private float duration;
+    @Column(name= "RESERVED")
+    private boolean reserved;
 
     public Movie() {}
-
-    public Movie(long id, String name, float length) {
-        this.id = id;
-        this.name = name;
-        this.duration = length;
-    }
 
     public Movie(String name, float length) {
         this.name = name;
         this.duration = length;
+    }
+
+    public Movie(String name, float length, boolean reserved) {
+        this.name = name;
+        this.duration = length;
+        this.reserved = reserved;
     }
 
     public long getId() {
@@ -40,5 +42,13 @@ public class Movie {
 
     public float getDuration() {
         return duration;
+    }
+
+    public boolean isReserved() {
+        return reserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
     }
 }

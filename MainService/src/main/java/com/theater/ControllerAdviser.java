@@ -1,7 +1,9 @@
 package com.theater;
 
+import com.theater.exception.MovieAlreadyReservedException;
 import com.theater.exception.MovieNotFoundException;
 import com.theater.exception.NoDataFoundException;
+import com.theater.exception.ReservationNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,12 +34,34 @@ public class ControllerAdviser extends ResponseEntityExceptionHandler {
 
     }
 
+    @ExceptionHandler(ReservationNotFoundException.class)
+    public ResponseEntity<Object> handleReservationNotFoundException(ReservationNotFoundException ex, WebRequest request) {
+
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("timestamp", LocalDateTime.now());
+        body.put("message", "Reservation not found");
+
+        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
+
+    }
+
     @ExceptionHandler(NoDataFoundException.class)
     public ResponseEntity<Object> handleNoDataFoundException(NoDataFoundException ex, WebRequest request) {
 
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());
         body.put("message", "No Data found");
+
+        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
+
+    }
+
+    @ExceptionHandler(MovieAlreadyReservedException.class)
+    public ResponseEntity<Object> handleMovieAlreadyReservedException(MovieAlreadyReservedException ex, WebRequest request) {
+
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("timestamp", LocalDateTime.now());
+        body.put("message", "Movie already reserved, could not create reservation");
 
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
 

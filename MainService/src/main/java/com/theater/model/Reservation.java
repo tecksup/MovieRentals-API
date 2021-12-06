@@ -11,19 +11,19 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name= "OWNER", length = 50)
+    @Column(name = "OWNER", nullable = false, length = 50)
     @NotNull(message = "Owner must be given")
     private String owner;
-    @Column(name= "RESERVEDMOVIEID")
-    private float reservedMovieId;
+    @Column(name = "RESERVEDMOVIEID", nullable = false)
+    private int reservedMovieId;
     @Column(name= "TIMECHECKEDOUT")
     private Date timeCheckedOut;
-    @Column(name= "DURATION")
+    @Column(name = "DURATION", nullable = false)
     private float duration;
 
     public Reservation() {}
 
-    public Reservation(String owner, float reservedMovieId, Date timeCheckedOut, float duration) {
+    public Reservation(String owner, int reservedMovieId, Date timeCheckedOut, float duration) {
         this.owner = owner;
         this.reservedMovieId = reservedMovieId;
         this.timeCheckedOut = timeCheckedOut;
@@ -38,7 +38,7 @@ public class Reservation {
         return owner;
     }
 
-    public float getReservedMovieId() {
+    public int getReservedMovieId() {
         return reservedMovieId;
     }
 
