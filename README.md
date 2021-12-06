@@ -18,12 +18,12 @@ Some of the tech stack was arbitrarily chosen, but they are for the most part th
 
 ### Some extra challenges:
 - [X] Extract all normal logic from the Controller: it should be the Service layer that takes care of that.
-- [ ] Normal logic assumes all inputs are correct: use javax.constraints (`@Validated`) to take care of that
-- [ ] Use `@ControllerAdvice` for controlling the error handling separately from this all
-- [ ] Understand how to can use application.properties, along with Spring Profiles, to control the flow of the application: it should have a local and a prod profile.
+- [X] Normal logic assumes all inputs are correct: use javax.constraints (`@Validated`) to take care of that
+- [X] Use `@ControllerAdvice` for controlling the error handling separately from this all
+- [ ] Understand how we can use application.properties, along with Spring Profiles, to control the flow of the application: it should have a local and a prod profile.
 - [ ] For each profile, use a different database: first, the local profile should connect to an H2 (in-memory) database, and then prod should instead connect to a PosgreSQL database that would run locally (it would actually be in the cloud or whatever, but for the purpose of this exercise we'll just make sure it can connect to 2 different DBs using profiles configuration)
 - [ ] Use Hibernate along with Spring Data to set up `@Repository` classes that would manage the connection and SQL calls to the DBs.
-- [ ] Those repositories should be injected in the service layers. The Controller should never see the repositories.
+- [X] Those repositories should be injected in the service layers. The Controller should never see the repositories.
 - [ ] Create a few test classes that use Jupiter for setting up the scenarios (`@BeforeEach`) and making some assertions (Assertions.asserTrue(...)). Those tests should use their own H2 DB. Simply make those integration tests (so go ahead and use `@SpringBootTest`, which will load the entire context).
 - [ ] Create some unit tests for any specific class using Mockito.
 - [ ] Add an OpenAPI documentation ("Swagger v3") to the project to help other people discover the API without having to read through the entire documentation. 
